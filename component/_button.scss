@@ -1,0 +1,82 @@
+.btn {
+  @include button;
+  margin-right: 40px;
+  background: linear-gradient(
+    to bottom right,
+    rgb(255, 207, 145),
+    rgb(255, 111, 92)
+  );
+  &:hover {
+    @include transition;
+    @include hover;
+  }
+  @media (max-width: 768px) {
+    position: fixed;
+    @include transition;
+    margin-right: -200px;
+    top: 450px;
+    z-index: 100;
+  }
+}
+.btn:focus {
+  outline-style: none;
+}
+
+.heroBtn {
+  @include button;
+  background: transparent;
+  #{$c}: rgb(255, 111, 92);
+  #{$b}: 2px solid rgb(255, 111, 92);
+  &:hover {
+    @include transition;
+    #{$b}: none;
+    #{$c}: $color_3;
+    background: linear-gradient(
+      to bottom right,
+      rgb(255, 207, 145),
+      rgb(255, 111, 92)
+    );
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+  }
+}
+.heroBtn_2 {
+  @include button;
+  margin-left: 20px;
+  background: linear-gradient(
+    to bottom right,
+    rgb(255, 207, 145),
+    rgb(255, 111, 92)
+  );
+  &:hover {
+    @include transition;
+    @include hover;
+  }
+}
+
+.projBtn:focus {
+  outline-style: none;
+}
+
+.connectBtn {
+  #{$f}-size: $font-md;
+  @include textTransform;
+  padding: 10px 9px;
+  cursor: pointer;
+  #{$b}: none;
+  background: linear-gradient(
+    to bottom right,
+    rgb(80, 80, 255),
+    rgb(253, 119, 119)
+  );
+  #{$c}: $color_3;
+  #{$b}-radius: 5px;
+  box-shadow: 0px 0px 20px rgb(80, 80, 255);
+  @media (max-width: 414px) {
+    #{$f}-size: 0.9rem;
+    width: 50%;
+    margin-left: 20px;
+  }
+}
+.connectBtn:focus {
+  outline-style: none;
+}

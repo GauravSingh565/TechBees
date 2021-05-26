@@ -1,0 +1,81 @@
+.service {
+  @include section;
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    height: 600px;
+    width: 600px;
+    border-radius: 50%;
+    background-#{$c}: $color_2;
+    opacity: 0.3;
+    z-index: -1;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    @media (max-width: 1024px) {
+      display: none;
+    }
+  }
+
+  .grid {
+    @include grid;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)) !important;
+    }
+    @media (max-width: 540px) {
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)) !important;
+    }
+    @media (max-width: 510px) {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+    }
+    @media (max-width: 414px) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    }
+    .serviceLeft {
+      @include grid_2;
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+      }
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+      }
+      @media (max-width: 540px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+      }
+    }
+    .serviceRight {
+      h1 {
+        #{$f}-size: $font_lg;
+        #{$c}: $color;
+        #{$f}-family: $font_1;
+        @include textTransform;
+        @media (max-width: 540px) {
+          #{$f}-size: $font-res-lg;
+        }
+      }
+      p {
+        #{$f}-size: $font-md;
+        #{$f}-family: $font_1;
+        #{$c}: $color_2;
+        #{$f}-weight: 600;
+        margin: 15px 0px;
+        width: 90%;
+        @media (max-width: 1024px) {
+          width: 100%;
+        }
+        @media (max-width: 768px) {
+          width: 90%;
+        }
+        @media (max-width: 540px) {
+          #{$f}-size: $font-res-sm;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+.humBurgger {
+  height: 30px;
+  width: 60px;
+  @include flex_2;
+  flex-direction: column;
+  cursor: pointer;
+  margin-bottom: 30px;
+  display: none;
+  @media (max-width: 768px) {
+    display: block;
+    z-index: 111;
+    top: 25px;
+    position: fixed;
+    right: 0px;
+  }
+  .show {
+    background-color: lighten($color_2, 10%) !important;
+
+    @include transition;
+    &::before {
+      transform: rotate(45deg) !important;
+      @include transition;
+    }
+    &::after {
+      transform: rotate(-45deg) !important;
+      @include transition;
+    }
+  }
+  .menu {
+    position: relative;
+    @include menu;
+    &::before {
+      @include menu;
+      @include content;
+      transform: translateY(-10px);
+    }
+    &::after {
+      @include menu;
+      @include content;
+      transform: translateY(10px);
+    }
+  }
+}

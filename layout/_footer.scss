@@ -1,0 +1,104 @@
+.footer {
+  @include section;
+  background-image: url("../images/footer-agency.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @media (max-width: 1024px) {
+    padding-bottom: 900px !important;
+  }
+  @media (max-width: 768px) {
+    padding-bottom: 500px !important;
+  }
+  @media (max-width: 540px) {
+    padding-bottom: 230px !important;
+  }
+  @media (max-width: 510px) {
+    padding-bottom: 60px !important;
+  }
+  @media (max-width: 414px) {
+    padding-bottom: 230px !important;
+  }
+  @media (max-width: 400px) {
+    padding-bottom: 130px !important;
+  }
+
+  .container {
+    .footerGrid {
+      @include grid_2;
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+      }
+      .tech {
+        h2 {
+          #{$f}-family: $font_2;
+          #{$c}: $color;
+          @include textTransform;
+          margin-bottom: 10px;
+        }
+        p {
+          #{$c}: $color_2;
+          #{$f}-family: $font_2;
+          #{$f}-size: $font-sm;
+          line-height: 1.2rem;
+          margin-bottom: 10px;
+        }
+        ul {
+          margin-top: 15px;
+          @include flex_2;
+          li {
+            margin-right: 50px;
+          }
+        }
+      }
+      .contact {
+        h2 {
+          #{$f}-family: $font_2;
+          #{$c}: $color;
+          @include textTransform;
+          margin-bottom: 10px;
+        }
+        p {
+          #{$c}: $color_2;
+          #{$f}-family: $font_2;
+          #{$f}-size: $font-sm;
+          line-height: 1.2rem;
+          margin-bottom: 20px;
+        }
+      }
+      .aboutUs {
+        h2 {
+          #{$f}-family: $font_2;
+          #{$c}: $color;
+          @include textTransform;
+          margin-bottom: 10px;
+        }
+        p {
+          #{$c}: $color_2;
+          #{$f}-family: $font_2;
+          #{$f}-size: $font-sm;
+          line-height: 1.2rem;
+          margin-bottom: 20px;
+        }
+      }
+      .customSoftware {
+        h2 {
+          #{$f}-family: $font_2;
+          #{$c}: $color;
+          @include textTransform;
+          margin-bottom: 10px;
+        }
+        p {
+          #{$c}: $color_2;
+          #{$f}-family: $font_2;
+          #{$f}-size: $font-sm;
+          line-height: 1.2rem;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

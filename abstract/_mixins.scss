@@ -1,0 +1,82 @@
+@mixin flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex_2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin list {
+  list-style: none;
+}
+@mixin link {
+  text-decoration: none;
+}
+
+@mixin textTransform {
+  text-transform: capitalize;
+}
+
+@mixin transition {
+  transition: all 0.6s ease;
+}
+
+@mixin grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-gap: 2rem;
+}
+
+@mixin button {
+  font-size: $font-sm;
+  padding: 5px 20px;
+  #{$b}: none;
+  @include textTransform;
+  font-family: $font_1;
+  font-weight: 700;
+  #{$b}-radius: 20px;
+  #{$c}: $color_3;
+  cursor: pointer;
+}
+
+@mixin hover {
+  background: linear-gradient(
+    to top left,
+    rgb(255, 207, 145),
+    rgb(255, 111, 92)
+  );
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+@mixin content {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+@mixin menu {
+  height: 4px;
+  width: 50%;
+  background-color: $color_5;
+  border-radius: 8px;
+}
+
+@mixin section {
+  height: auto;
+  width: 100%;
+  padding: 50px 0px;
+}
+
+@mixin grid_2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem;
+}
+@mixin grid_3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 2rem;
+}

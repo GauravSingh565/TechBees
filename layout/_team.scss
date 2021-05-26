@@ -1,0 +1,79 @@
+.team {
+  @include section;
+  background: linear-gradient(
+    to top left,
+    rgb(255, 207, 145),
+    rgb(255, 111, 92)
+  );
+  .container {
+    h1 {
+      @include textTransform;
+      text-align: center;
+      #{$f}-size: $font_lg;
+      #{$c}: $color;
+      #{$f}-family: $font_1;
+      @media (max-width: 540px) {
+        #{$f}-size: $font-res-lg;
+      }
+    }
+    .grid {
+      margin-top: 50px;
+      @include grid_2;
+
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+      }
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+      }
+      @media (max-width: 540px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+      }
+      .teamCard {
+        background-#{$c}: $color_3;
+        text-align: center;
+        cursor: pointer;
+        padding: 20px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+        #{$b}-radius: 5px;
+        &:hover {
+          @include transition;
+          transform: translateY(-10px);
+        }
+        .teamImg {
+          width: 100px;
+          #{$b}-radius: 50%;
+        }
+        .img_4 {
+          width: 130px;
+        }
+        h2 {
+          @include textTransform;
+          #{$f}-size: $font-md-2;
+          #{$c}: $color;
+          #{$f}-family: $font_1;
+          margin-top: 10px;
+        }
+        p {
+          #{$f}-size: $font-md;
+          #{$c}: $color_2;
+          #{$f}-family: $font_1;
+          #{$f}-weight: 600;
+          margin-top: 10px;
+        }
+        ul {
+          @include flex_2;
+          margin-top: 30px;
+          li {
+            margin-left: 20px;
+            cursor: pointer;
+            &:hover {
+              @include transition;
+              transform: translateY(-10px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

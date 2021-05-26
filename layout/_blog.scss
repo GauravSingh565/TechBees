@@ -1,0 +1,96 @@
+.blog {
+  @include section;
+  .container {
+    h1 {
+      @include textTransform;
+      text-align: center;
+      #{$f}-size: $font-lg;
+      #{$f}-family: $font_1;
+      #{$c}: $color;
+      @media (max-width: 540px) {
+        #{$f}-size: $font-res-lg;
+      }
+    }
+    .blogGrid {
+      @include grid_3;
+
+      margin-top: 30px;
+
+      @media (max-width: 540px) {
+        grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)) !important;
+      }
+      @media (max-width: 510px) {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+      }
+      @media (max-width: 414px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+      }
+      .blogBox {
+        height: auto;
+        padding: 10px;
+        width: 340px;
+        img {
+          width: 350px;
+          @media (max-width: 400px) {
+            width: 300px;
+          }
+        }
+        h2 {
+          @include textTransform;
+          #{$f}-size: $font-md;
+          #{$f}-family: $font_1;
+          #{$c}: $color;
+          margin: 10px 0px;
+        }
+        p {
+          #{$f}-family: $font_1;
+          #{$c}: $color_2;
+          #{$f}-weight: 600;
+          #{$f}-size: $font-sm;
+        }
+      }
+    }
+    .connected {
+      @include flex_2;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      width: 55%;
+      margin-left: 20%;
+      margin-top: 40px;
+      #{$b}-radius: 8px;
+      @media (max-width: 1024px) {
+        width: 100%;
+        margin-left: 0px;
+        padding: 10px;
+      }
+      .connect {
+        margin-right: 30px;
+        text-align: left;
+        @media (max-width: 768px) {
+          margin-right: 50px;
+        }
+
+        h2 {
+          @include textTransform;
+          #{$f}-size: $font-md-2;
+          #{$f}-family: $font_1;
+          #{$c}: $color;
+          #{$f}-weight: 600;
+          margin: 10px;
+          @media (max-width: 768px) {
+            #{$f}-size: $font-res-sm;
+          }
+        }
+        p {
+          #{$f}-family: $font_1;
+          #{$c}: $color_2;
+          #{$f}-weight: 600;
+          #{$f}-size: $font-sm;
+          @media (max-width: 768px) {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}

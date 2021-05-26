@@ -1,0 +1,104 @@
+.lead {
+  @include section;
+  .container {
+    h1 {
+      #{$f}-size: $font_lg;
+      #{$c}: $color;
+      #{$f}-family: $font_1;
+      @include textTransform;
+      @media (max-width: 540px) {
+        #{$f}-size: $font-res-lg;
+        margin-bottom: 20px;
+      }
+    }
+    p {
+      #{$c}: $color_2;
+      #{$f}-family: $font_1;
+      #{$f}-size: $font-md;
+      #{$f}-weight: 600;
+      width: 50%;
+      @media (max-width: 1024px) {
+        #{$f}-size: $font-res-sm;
+        width: 100%;
+      }
+    }
+    .mainLead {
+      margin-top: 40px;
+      .grid {
+        @include grid;
+        @media (max-width: 1024px) {
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+        @media (max-width: 768px) {
+          grid-template-columns: repeat(
+            auto-fit,
+            minmax(500px, 1fr)
+          ) !important;
+        }
+        @media (max-width: 540px) {
+          grid-template-columns: repeat(
+            auto-fit,
+            minmax(300px, 1fr)
+          ) !important;
+        }
+        .leadLeft {
+          @include grid_2;
+          @media (max-width: 1024px) {
+            grid-template-columns: repeat(
+              auto-fit,
+              minmax(200px, 1fr)
+            ) !important;
+          }
+          @media (max-width: 768px) {
+            grid-template-columns: repeat(
+              auto-fit,
+              minmax(250px, 1fr)
+            ) !important;
+          }
+          @media (max-width: 540px) {
+            grid-template-columns: repeat(
+              auto-fit,
+              minmax(200px, 1fr)
+            ) !important;
+          }
+          .card {
+            h1 {
+              #{$c}: $color_3;
+              margin-top: 20px;
+            }
+          }
+        }
+        .leadRight {
+          .img {
+            width: 600px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            #{$b}-radius: 8px;
+            @media (max-width: 1024px) {
+              width: 460px !important;
+            }
+            @media (max-width: 768px) {
+              width: 600px !important;
+            }
+            @media (max-width: 540px) {
+              width: 490px !important;
+            }
+            @media (max-width: 510px) {
+              width: 430px !important;
+            }
+            @media (max-width: 414px) {
+              width: 360px !important;
+            }
+            @media (max-width: 400px) {
+              width: 330px !important;
+            }
+            img {
+              height: 100%;
+              width: 100%;
+              #{$b}-radius: 8px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

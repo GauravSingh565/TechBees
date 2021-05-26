@@ -1,0 +1,64 @@
+.showNav {
+  width: 250px !important;
+  @include transition;
+}
+
+.navbar {
+  @include flex;
+  height: auto;
+  width: 100%;
+  padding: 10px 20px;
+  position: relative;
+
+  .navLink {
+    @include flex_2;
+
+    ul {
+      @include flex_2;
+      @media (max-width: 768px) {
+        display: block;
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        width: 0px;
+        background-color: lighten($color_2, 10%);
+        height: 100vh;
+        z-index: 100;
+      }
+      li {
+        @include list;
+        @media (max-width: 768px) {
+          margin: 50px 0px;
+          color: #111;
+        }
+        a {
+          margin-right: 50px;
+          @include link;
+          @include textTransform;
+          font-family: $font_1;
+          font-size: $font-md;
+          font-weight: 600;
+          #{$c}: $color_3 !important;
+          @media (max-width: 400px) {
+            #{$c}: $color_5 !important;
+            width: 100%;
+          }
+          position: relative;
+          &::before {
+            content: "";
+            position: absolute;
+            top: 26px;
+            left: 0px;
+            height: 2px;
+            width: 0;
+            background-#{$c}: rgb(255, 207, 145);
+          }
+          &:hover::before {
+            @include transition;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

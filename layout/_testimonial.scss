@@ -1,0 +1,87 @@
+.testimonial {
+  @include section;
+  background: linear-gradient(
+    to bottom right,
+    rgb(80, 80, 255),
+    rgb(253, 119, 119)
+  );
+  .container {
+    h1 {
+      @include textTransform;
+      text-align: center;
+      #{$f}-size: $font_lg;
+      #{$c}: $color_3;
+      #{$f}-family: $font_1;
+      @media (max-width: 540px) {
+        #{$f}-size: $font-res-lg;
+      }
+    }
+  }
+}
+.slide {
+  @include flex_2;
+  margin-top: 50px;
+  .swiper-container-3d .swiper-slide-shadow-left {
+    background-image: none;
+  }
+  .swiper-container-3d .swiper-slide-shadow-right {
+    background-image: none;
+  }
+  .swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    #{$b}-radius: 15px;
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 350px;
+      #{$b}-radius: 8px;
+      box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+      filter: blur(4px);
+
+      .testCard {
+        width: 300px;
+        padding: 20px 10px;
+        position: relative;
+        #{$b}-radius: 15px;
+        background-#{$c}: $color_3;
+        i {
+          position: absolute;
+          top: 10px;
+          right: 20px;
+          #{$f}-size: $font-lg;
+          #{$c}: $color_2;
+        }
+        p {
+          #{$f}-size: $font-md;
+          #{$f}-family: $font_1;
+          #{$c}: $color_2;
+          #{$f}-weight: 600;
+          margin: 40px 0px;
+        }
+        .comment {
+          @include flex_2;
+          margin-top: 20px;
+          margin-right: 90px;
+          img {
+            width: 50px;
+            #{$b}-radius: 50%;
+          }
+          h2 {
+            @include textTransform;
+            margin-left: 20px;
+            #{$c}: $color;
+            #{$f}-family: $font_1;
+          }
+        }
+      }
+    }
+    .swiper-slide-active {
+      filter: blur(0px);
+      background-#{$c}: $color_3;
+    }
+  }
+}

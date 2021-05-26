@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+html {
+  scroll-behavior: smooth;
+}
+body.dark {
+  background-color: $color;
+}
+body.dark {
+  h1 {
+    #{$c}: $color_3 !important;
+  }
+  h2 {
+    #{$c}: $color_3 !important;
+  }
+  p {
+    #{$c}: whitesmoke !important;
+  }
+  .teamCard {
+    p {
+      #{$c}: $color_2 !important;
+    }
+  }
+  .testCard {
+    p {
+      #{$c}: $color_2 !important;
+    }
+    h2 {
+      #{$c}: $color_2 !important;
+    }
+  }
+}

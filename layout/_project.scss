@@ -1,0 +1,99 @@
+.project {
+  @include section;
+  h1 {
+    @include textTransform;
+    text-align: center;
+    #{$f}-size: $font_lg;
+    #{$c}: $color;
+    #{$f}-family: $font_1;
+    @media (max-width: 540px) {
+      #{$f}-size: $font-res-lg;
+    }
+  }
+  .proj {
+    margin-top: 30px;
+    @include grid_3;
+    @media (max-width: 1024px) {
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)) !important;
+    }
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important;
+    }
+    @media (max-width: 540px) {
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)) !important;
+    }
+    @media (max-width: 510px) {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+    }
+    @media (max-width: 414px) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+    }
+    .projCard {
+      height: 300px;
+      width: 350px;
+      #{$b}-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      @media (max-width: 1024px) {
+        height: 260px !important;
+        width: 300px !important;
+      }
+      @media (max-width: 768px) {
+        height: 300px !important;
+        width: 350px !important;
+      }
+      @media (max-width: 540px) {
+        height: 260px !important;
+        width: 470px !important;
+      }
+      @media (max-width: 510px) {
+        height: 260px;
+        width: 430px !important;
+      }
+      @media (max-width: 414px) {
+        height: 260px;
+        width: 370px !important;
+      }
+      @media (max-width: 400px) {
+        height: 260px;
+        width: 320px !important;
+      }
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0%;
+        background-#{$c}: rgba(40, 47, 89, 0.5);
+        #{$b}-radius: 5px;
+      }
+      &:hover::before {
+        width: 100%;
+        @include transition;
+      }
+      &:hover .projBtn {
+        opacity: 1;
+        top: 50%;
+        @include transition;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        #{$b}-radius: 5px;
+      }
+      .projBtn {
+        position: absolute;
+        top: 94%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        #{$b}: none;
+        #{$f}-size: $font-md;
+        padding: 5px 20px;
+        #{$b}-radius: 20px;
+        cursor: pointer;
+        opacity: 0;
+      }
+    }
+  }
+}

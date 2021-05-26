@@ -1,0 +1,29 @@
+$colors: (
+  1: linear-gradient(to bottom right, rgb(107, 107, 255), blue),
+  2: linear-gradient(to bottom right, rgb(80, 80, 255), rgb(253, 119, 119)),
+  3: linear-gradient(to bottom right, rgb(255, 207, 145), rgb(255, 111, 92)),
+  4: linear-gradient(to bottom right, #2af598, #009efd),
+);
+
+@for $i from 1 through 4 {
+  .card_#{$i} {
+    background: map-get($colors, $i);
+    text-align: center;
+    padding: 20px;
+    #{$b}-radius: 8px;
+    cursor: pointer;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    &:hover {
+      @include transition;
+      transform: translateY(-15px);
+    }
+
+    h2 {
+      @include textTransform;
+      #{$c}: $color_3;
+      #{$f}-family: $font_1;
+      #{$f}-size: $font-md;
+      margin-top: 20px;
+    }
+  }
+}
